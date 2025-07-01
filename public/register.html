@@ -8,18 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
 rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
 <div class="container">
-  <h1>Login Now</h1>
-  <form action="/login" method="POST">
-    <div class="container-login">
-    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your User Name" required>
-    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your Password" required>
-    <button type="submit">Login</button>
-        </div>
-    <h4>You don't have an account? <a href="register.html">Register</a></h4>
+    <h1>Register</h1>
+  <form action="/register" method="POST">
+     <div class="container-login">
+    <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter your User Name" required>
+    <input type="password" id="registerPassword" name="registerPassword" placeholder="Enter your Password" required>
+    <button type="submit">Register</button>
+    </div>
+     <h4>You already have an account? <a href="index.html">Login</a></h4>
   </form>
 </div>
   <div id="response"></div>

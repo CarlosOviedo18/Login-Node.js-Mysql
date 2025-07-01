@@ -1,0 +1,99 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+.container{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: 
+    auto 1fr auto;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.cart-item{
+ font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    
+}
+
+header{
+   background-color: rgb(163, 160, 160);
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+main{
+
+    padding: 1rem;
+    text-align: center;
+}  
+
+
+
+footer{
+   background-color: rgb(163, 160, 160);
+    padding: 1rem;
+    text-align: center;
+}   
+
+ul{
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    list-style: none;
+    margin: 0;
+}
+.product-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 2rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px;
+    transition: box-shadow 0.2s;
+}
+    
+
+
+
+button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 3rem;
+    
+}
+
+
+
