@@ -61,8 +61,17 @@ app.get('/products', async (req, res) => {
 
 app.get('/cart', async (req, res) => {
     try {
-        // Si tienes userId, puedes filtrarlo aquí
-        const [rows] = await pool.query('SELECT * FROM cart_items');
+        const [rows] = await pool.query(`
+            SELECT 
+                cart_items.id,
+                cart_items.cart_id,
+                cart_items.product_id,
+                products.name AS product_name,
+                cart_items.quantity,
+                cart_items.price
+            FROM cart_items
+            JOIN products ON cart_items.product_id = products.id
+        `);
         res.json(rows);
     } catch (error) {
         console.error('Error al consultar el carrito:', error);
@@ -95,6 +104,7 @@ app.post('/cart', async (req, res) => {
             'INSERT INTO cart_items (cart_id, product_id, quantity, price) VALUES (?, ?, ?, ?)',
             [cartId, productId, quantity || 1, price]
         );
+        
 
         res.send('Producto agregado al carrito');
         
