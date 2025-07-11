@@ -72,6 +72,7 @@ app.get('/cart', async (req, res) => {
             FROM cart_items
             JOIN products ON cart_items.product_id = products.id
         `);
+
         res.json(rows);
     } catch (error) {
         console.error('Error al consultar el carrito:', error);
@@ -111,6 +112,18 @@ app.post('/cart', async (req, res) => {
     } catch (error) {
         console.error('Error al agregar producto al carrito:', error);
         res.status(500).send('Error al agregar producto al carrito');
+    }
+});
+
+
+app.delete('/cart/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        await pool.query('DELETE FROM cart_items WHERE id = ?', [id]);
+        res.send('Producto eliminado del carrito');
+    } catch (error) {
+        console.error('Error al eliminar producto del carrito:', error);
+        res.status(500).send('Error al eliminar producto del carrito');
     }
 });
 
